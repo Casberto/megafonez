@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="IMG/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <strong>Megafone</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html"><strong>Dashboard</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comercial.html"><strong>Comercial</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customizacoes.html"><strong>Customizações</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="implantacao.html"><strong>Implantação</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suporte.html"><strong>Suporte</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tarefas.html"><strong>Tarefas</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rq.html"><strong>RQ's</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videos.html"><strong>Vídeos</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manuais.html"><strong>Manuais</strong></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button" onclick="logout()">Logout</button>
+                </form>
+            </div>
+        </nav>
+
+        <section class="dashboard">
+            <h4 class="titulo"><strong>Comercial</strong></h4>
+            <!-- Gráficos -->
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <!-- Gráfico de Chamados -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Chamados</h5>
+                                <canvas id="chamadosChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Gráfico de Clientes em Implantação -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Clientes em Implantação</h5>
+                                <canvas id="implantacaoChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Gráfico de Clientes Bloqueados no Suporte -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Clientes Bloqueados</h5>
+                                <canvas id="suporteChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Clientes em Implantação</h5>
+                                <p class="card-text">10 clientes em processo de implantação.</p>
+                                <a href="implantacao.html" class="btn btn-primary">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Clientes Bloqueados no Suporte</h5>
+                                <p class="card-text">3 clientes bloqueados no suporte.</p>
+                                <a href="suporte.html" class="btn btn-primary">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">RQ's Pendente Orçamento</h5>
+                                <p class="card-text">5 requisições pendentes de orçamento.</p>
+                                <a href="rq.html" class="btn btn-primary">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">RQ's Pendente Desenvolvimento</h5>
+                                <p class="card-text">5 requisições em desenvolvimento.</p>
+                                <a href="rq.html" class="btn btn-primary">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body shadow">
+                                    <h5 class="card-title">Tarefas em Progresso</h5>
+                                    <p class="card-text">5 tarefas em desenvolvimento.</p>
+                                    <a href="rq.html" class="btn btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body shadow">
+                                    <h5 class="card-title">Tarefas a fazer</h5>
+                                    <p class="card-text">5 tarefas pendentes de desenvolvimento.</p>
+                                    <a href="rq.html" class="btn btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <script>
+        // Dados fictícios para o gráfico
+        var data = {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        datasets: [
+            {
+            label: 'Defeito',
+            data: [15, 12, 12, 15, 11, 14, 16, 14, 17, 22, 15, 20],
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+            },
+            {
+            label: 'Suporte',
+            data: [10, 9, 10, 7, 6, 7, 8, 5, 6, 10, 8, 10],
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+            },
+            {
+            label: 'Necessidade',
+            data: [5, 7, 8, 3, 1, 4, 5, 3, 3, 6, 2, 4],
+            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+            }
+        ]
+        };
+        var dataImplantacao = {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            datasets: [
+                {
+                label: 'Implantação',
+                data: [5, 6, 4, 3, 1, 2, 3, 3, 4, 2, 1, 1],
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+                }
+            ]
+        };
+
+        var dataSuporte = {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            datasets: [
+                {
+                label: 'Suporte',
+                data: [9, 8, 3, 4, 2, 6, 4, 5, 7, 5, 4, 5],
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+                }
+            ]
+        };
+
+        // Opções do gráfico
+        var options = {
+        scales: {
+            yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+            }]
+        }
+        };
+    
+        // Criando o gráfico
+        var ctx = document.getElementById('chamadosChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: options
+        });
+
+        var ctxImplantacao = document.getElementById('implantacaoChart').getContext('2d');
+        var implantacaoChart = new Chart(ctxImplantacao, {
+            type: 'line',
+            data: dataImplantacao,
+            options: options
+        });
+
+        var ctxSuporte = document.getElementById('suporteChart').getContext('2d');
+        var suporteChart = new Chart(ctxSuporte, {
+            type: 'line',
+            data: dataSuporte,
+            options: options
+        });
+
+        // Função de logout
+        function logout() {
+            window.location.href = 'index.html';
+        }
+        
+        //Menu Toggle Script
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        </script>
+    </body>
+</html>

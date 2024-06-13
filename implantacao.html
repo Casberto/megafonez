@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="IMG/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <strong>Megafone</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html"><strong>Dashboard</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comercial.html"><strong>Comercial</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customizacoes.html"><strong>Customizações</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="implantacao.html"><strong>Implantação</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suporte.html"><strong>Suporte</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tarefas.html"><strong>Tarefas</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rq.html"><strong>RQ's</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videos.html"><strong>Vídeos</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manuais.html"><strong>Manuais</strong></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button" onclick="logout()">Logout</button>
+                </form>
+            </div>
+        </nav>
+
+        <section class="dashboard">
+            <h4 class="titulo"><strong>Comercial</strong></h4>
+            <div class="container mt-4">
+                <div class="row">
+                    <!-- Total de Projetos -->
+                    <div class="col-md-4 mb-4 ">
+                        <div class="card bg-info text-white">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Total de Projetos</h5>
+                                <p class="card-text">Softaex: 2</p>
+                                <p class="card-text">Debx: 4</p>
+                                <p class="card-text">Mago4: 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Total de Horas de Projeto -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Total de Horas</h5>
+                                <p class="card-text">Softaex: 150</p>
+                                <p class="card-text">Debx: 2500</p>
+                                <p class="card-text">Mago4: 450</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Projetos Novos</h5>
+                                <p class="card-text">Softaex: 1</p>
+                                <p class="card-text">Debx: 2</p>
+                                <p class="card-text">Mago4: 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Projetos Pré-GoLive</h5>
+                                <p class="card-text">Softaex: 1</p>
+                                <p class="card-text">Debx: 1</p>
+                                <p class="card-text">Mago4: 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Projetos Atrasados</h5>
+                                <p class="card-text">Softaex: 0</p>
+                                <p class="card-text">Debx: 1</p>
+                                <p class="card-text">Mago4: 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div class="container mt-4">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="debxtab" data-toggle="tab" href="#debxtabContent" role="tab" aria-controls="debxtabContent" aria-selected="true">Debx</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="softaextab" data-toggle="tab" href="#softaextabContent" role="tab" aria-controls="softaextabContent" aria-selected="false">Softaex</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="magotab" data-toggle="tab" href="#magotabContent" role="tab" aria-controls="magotabContent" aria-selected="false">Mago4</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="debxtabContent" role="tabpanel" aria-labelledby="debxtab">
+                        <div class="table-responsive mt-4">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nome Cliente</th>
+                                        <th scope="col">Módulos Contratados</th>
+                                        <th scope="col">Horas Gastas</th>
+                                        <th scope="col">Horas Restante</th>
+                                        <th scope="col">Percentual Implantado</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dados do cliente para o produto Debx -->
+                                    <tr>
+                                        <td>Empresa A Ltda</td>
+                                        <td>Módulo A, Módulo B</td>
+                                        <td>150</td>
+                                        <td>50</td>
+                                        <td>75%</td>
+                                        <td>Novo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Empresa AB Ltda</td>
+                                        <td>Módulo C, Módulo D</td>
+                                        <td>200</td>
+                                        <td>100</td>
+                                        <td>50%</td>
+                                        <td>Implantação</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Empresa AB Ltda</td>
+                                        <td>Módulo E, Módulo F</td>
+                                        <td>200</td>
+                                        <td>100</td>
+                                        <td>50%</td>
+                                        <td>Pré-GoLive</td>
+                                    </tr>
+                                    <!-- Adicione mais linhas conforme necessário -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="softaextabContent" role="tabpanel" aria-labelledby="softaextab">
+                        <div class="table-responsive mt-4">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nome Cliente</th>
+                                        <th scope="col">Módulos Contratados</th>
+                                        <th scope="col">Horas Gastas</th>
+                                        <th scope="col">Horas Restante</th>
+                                        <th scope="col">Percentual Implantado</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dados do cliente para o produto Softaex -->
+                                    <tr>
+                                        <td>Empresa Ca Eireli</td>
+                                        <td>Módulo A, Módulo B</td>
+                                        <td>150</td>
+                                        <td>50</td>
+                                        <td>75%</td>
+                                        <td>Novo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Empresa Ce Eireli</td>
+                                        <td>Módulo C, Módulo D</td>
+                                        <td>200</td>
+                                        <td>100</td>
+                                        <td>50%</td>
+                                        <td>Implantação</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Empresa Cd Eireli</td>
+                                        <td>Módulo E, Módulo F</td>
+                                        <td>200</td>
+                                        <td>100</td>
+                                        <td>50%</td>
+                                        <td>Pré-GoLive</td>
+                                    </tr>
+                                    <!-- Adicione mais linhas conforme necessário -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="magotabContent" role="tabpanel" aria-labelledby="magotab">
+                        <div class="table-responsive mt-4">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nome Cliente</th>
+                                        <th scope="col">Módulos Contratados</th>
+                                        <th scope="col">Horas Gastas</th>
+                                        <th scope="col">Horas Restante</th>
+                                        <th scope="col">Percentual Implantado</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dados do cliente para o produto Mago -->
+                                    <tr>
+                                        <td>Empresa B SA</td>
+                                        <td>Módulo A, Módulo B</td>
+                                        <td>150</td>
+                                        <td>50</td>
+                                        <td>75%</td>
+                                        <td>Novo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Empresa Ba SA</td>
+                                        <td>Módulo C, Módulo D</td>
+                                        <td>200</td>
+                                        <td>100</td>
+                                        <td>50%</td>
+                                        <td>Implantação</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Empresa Bc SA</td>
+                                        <td>Módulo E, Módulo F</td>
+                                        <td>200</td>
+                                        <td>100</td>
+                                        <td>50%</td>
+                                        <td>Pré-GoLive</td>
+                                    </tr>
+                                    <!-- Adicione mais linhas conforme necessário -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <script>
+            // Função de logout
+            function logout() {
+                window.location.href = 'index.html';
+            }
+                
+            //Menu Toggle Script
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="IMG/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <strong>Megafone</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html"><strong>Dashboard</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comercial.html"><strong>Comercial</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customizacoes.html"><strong>Customizações</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="implantacao.html"><strong>Implantação</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suporte.html"><strong>Suporte</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tarefas.html"><strong>Tarefas</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rq.html"><strong>RQ's</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videos.html"><strong>Vídeos</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manuais.html"><strong>Manuais</strong></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button" onclick="logout()">Logout</button>
+                </form>
+            </div>
+        </nav>
+
+        <section class="central">
+            <h4 class="titulo"><strong>Comercial</strong></h4>
+            <div class="container mt-0 cards">
+                <div class="row justify-content-center">
+                    <!-- Seleção de Cliente -->
+                    <div class="col-md-12 mb-4">
+                        <label for="clienteSelect"><strong>Selecionar Cliente:</strong></label>
+                        <select class="form-control" id="clienteSelect">
+                            <option value="cliente1">Empresa A Ltda</option>
+                            <option value="cliente2">Empresa B SA</option>
+                            <option value="cliente3">Empresa C Eireli</option>
+                            <!-- Adicione mais opções conforme necessário -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Informações do Cliente</h5>
+                                <p class="card-text"><strong>Vendedor:</strong> <span id="infoVendedor"></span></p>
+                                <p class="card-text"><strong>Responsável:</strong> <span id="infoResponsavel"></span></p>
+                                <p class="card-text"><strong>Telefone:</strong> <span id="infoTelefone"></span></p>
+                                <p class="card-text"><strong>E-mail:</strong> <span id="infoEmail"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Linha do Tempo do Cliente</h5>
+                                <ul class="list-group" id="linhaTempoCliente">
+                                    <!-- Os itens da linha do tempo serão adicionados dinamicamente aqui -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">RQs Pendentes de Orçamento</h5>
+                                <p class="card-text">Total: <span id="totalRQsPendentes"></span></p>
+                                <ul class="list-group" id="listaRQsPendentes">
+                                    <!-- Os itens da lista de RQs pendentes serão adicionados dinamicamente aqui -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Dados fictícios dos clientes
+            const clientes = {
+                cliente1: {
+                    vendedor: "João Silva",
+                    responsavel: "Carlos Souza",
+                    telefone: "(11) 9876-5432",
+                    email: "carlos@exemplo.com",
+                    linhaTempo: [
+                        { evento: "Início das Negociações", data: "01/01/2024" },
+                        { evento: "Fechamento de Contrato", data: "15/01/2024" },
+                        { evento: "Assinatura de Documentos Iniciais", data: "20/01/2024" },
+                        { evento: "Início da Implantação", data: "01/02/2024" },
+                        { evento: "Go-Live", data: "15/03/2024" },
+                        { evento: "Passagem para o Suporte", data: "30/03/2024" }
+                    ],
+                    rqsPendentes: ["RQ001", "RQ002", "RQ003"]
+                },
+                cliente2: {
+                    vendedor: "Maria Santos",
+                    responsavel: "Ana Oliveira",
+                    telefone: "(11) 9999-8888",
+                    email: "ana@exemplo.com",
+                    linhaTempo: [
+                        { evento: "Início das Negociações", data: "01/02/2024" },
+                        { evento: "Fechamento de Contrato", data: "20/02/2024" },
+                        { evento: "Assinatura de Documentos Iniciais", data: "25/02/2024" },
+                        { evento: "Início da Implantação", data: "01/03/2024" },
+                        { evento: "Go-Live", data: "20/04/2024" },
+                        { evento: "Passagem para o Suporte", data: "05/05/2024" }
+                    ],
+                    rqsPendentes: ["RQ004", "RQ005"]
+                },
+                cliente3: {
+                    vendedor: "Pedro Oliveira",
+                    responsavel: "Juliana Souza",
+                    telefone: "(11) 8765-4321",
+                    email: "juliana@exemplo.com",
+                    linhaTempo: [
+                        { evento: "Início das Negociações", data: "01/03/2024" },
+                        { evento: "Fechamento de Contrato", data: "30/03/2024" },
+                        { evento: "Assinatura de Documentos Iniciais", data: "05/04/2024" },
+                        { evento: "Início da Implantação", data: "15/04/2024" },
+                        { evento: "Go-Live", data: "30/05/2024" },
+                        { evento: "Passagem para o Suporte", data: "15/06/2024" }
+                    ],
+                    rqsPendentes: ["RQ006"]
+                }
+            };
+
+            // Função para preencher os campos de informações do cliente, a linha do tempo e os dados das RQs pendentes de orçamento
+            function preencherInformacoesCliente() {
+                // Obtém o valor selecionado no menu suspenso
+                const clienteSelecionado = document.getElementById("clienteSelect").value;
+                
+                // Obtém o objeto de cliente correspondente aos dados selecionados
+                const cliente = clientes[clienteSelecionado];
+                
+                // Preenche os campos de informações do cliente
+                document.getElementById("infoVendedor").innerText = cliente.vendedor;
+                document.getElementById("infoResponsavel").innerText = cliente.responsavel;
+                document.getElementById("infoTelefone").innerText = cliente.telefone;
+                document.getElementById("infoEmail").innerText = cliente.email;
+
+                // Preenche a linha do tempo do cliente
+                const linhaTempo = cliente.linhaTempo.map(evento => `<li class="list-group-item">${evento.evento}: ${evento.data}</li>`).join("");
+                document.getElementById("linhaTempoCliente").innerHTML = linhaTempo;
+
+                // Calcula o total de RQs pendentes de orçamento
+                const totalRQsPendentes = cliente.rqsPendentes.length;
+                document.getElementById("totalRQsPendentes").innerText = totalRQsPendentes;
+
+                // Preenche a lista de RQs pendentes de orçamento
+                const listaRQsPendentes = cliente.rqsPendentes.map(rq => `<li class="list-group-item">${rq}</li>`).join("");
+                document.getElementById("listaRQsPendentes").innerHTML = listaRQsPendentes;
+            }
+
+            // Adiciona um evento de alteração ao menu suspenso para chamar a função preencherInformacoesCliente() sempre que o cliente for alterado
+            document.getElementById("clienteSelect").addEventListener("change", preencherInformacoesCliente);
+
+            // Chama a função preencherInformacoesCliente() inicialmente para exibir os dados do cliente selecionado por padrão
+            preencherInformacoesCliente();
+
+            // Função de logout
+            function logout() {
+                window.location.href = 'index.html';
+            }
+            
+            //Menu Toggle Script
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+        </script>
+    </body>
+</html>

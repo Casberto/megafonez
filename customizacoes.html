@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="IMG/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <strong>Megafone</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html"><strong>Dashboard</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comercial.html"><strong>Comercial</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customizacoes.html"><strong>Customizações</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="implantacao.html"><strong>Implantação</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suporte.html"><strong>Suporte</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tarefas.html"><strong>Tarefas</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rq.html"><strong>RQ's</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videos.html"><strong>Vídeos</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manuais.html"><strong>Manuais</strong></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button" onclick="logout()">Logout</button>
+                </form>
+            </div>
+        </nav>
+        
+        <section class="central">
+            <h4 class="titulo"><strong>Customizações</strong></h4>
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <!-- Seleção de Cliente -->
+                    <div class="col-md-12 mb-4">
+                        <label for="clienteSelect">Selecionar Cliente:</label>
+                        <select class="form-control" id="clienteSelect">
+                            <option value="cliente1">Empresa A Ltda</option>
+                            <option value="cliente2">Empresa B SA</option>
+                            <option value="cliente3">Empresa C Eireli</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Informações do Cliente</h5>
+                                <p class="card-text"><strong>Status:</strong> <span id="infoStatus"></span></p>
+                                <p class="card-text"><strong>Implantadores:</strong> <span id="infoImplantadores"></span></p>
+                                <p class="card-text"><strong>Produto:</strong> <span id="infoProduto"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-body shadow">
+                                <h5 class="card-title">Customizações</h5>
+                                <ul class="list-group" id="listaCustomizacoes">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <script>
+            const clientes = {
+                cliente1: {
+                    status: "Em Implantação",
+                    implantadores: "João Silva, Carlos Oliveira, Julia Nascimento",
+                    produto: "Debx",
+                    customizacoes: [
+                        { evento: "Integração de cadastro de cliente", data: "01/01/2024", descricao: "Personalização específica para integração de cadastro de cliente. Disponibilizado ao cliente na versão 24.1.0.0" },
+                        { evento: "Envio automático de novo cadastro", data: "15/01/2024", descricao: "Personalização para envio automático de e-mail de boas-vindas para novos clientes. Disponibilizado ao cliente na versão 24.1.2.0" }
+                    ]
+                },
+                cliente2: {
+                    status: "Suporte",
+                    implantadores: "Maria Santos, Ana Oliveira",
+                    produto: "Mago4",
+                    customizacoes: [
+                        { evento: "Integração de cadastro de produto", data: "01/02/2024", descricao: "Personalização para integração de cadastro de produto. Disponibilizado ao cliente na versão 2.0.0." },
+                        { evento: "Relatório de vendas mensal", data: "15/02/2024", descricao: "Criação de relatório personalizado para vendas mensais. Disponibilizado ao cliente na versão 2.1.0." }
+                    ]
+                },
+                cliente3: {
+                    status: "Suporte",
+                    implantadores: "Pedro Oliveira, Juliana Souza",
+                    produto: "SoftaEx",
+                    customizacoes: [
+                        { evento: "Integração de pagamento online", data: "01/03/2024", descricao: "Personalização para integração de pagamento online. Disponibilizado ao cliente na versão 3.0.0." },
+                        { evento: "Customização de relatórios", data: "15/03/2024", descricao: "Adição de opções personalizadas aos relatórios existentes. Disponibilizado ao cliente na versão 3.1.0." }
+                    ]
+                }
+            };
+        
+            // Função para preencher os campos de informações do cliente e as customizações
+            function preencherInformacoesCliente() {
+                // Obtém o valor selecionado no menu suspenso
+                const clienteSelecionado = document.getElementById("clienteSelect").value;
+        
+                // Obtém o objeto de cliente correspondente aos dados selecionados
+                const cliente = clientes[clienteSelecionado];
+        
+                // Preenche os campos de informações do cliente
+                document.getElementById("infoStatus").innerText = cliente.status;
+                document.getElementById("infoImplantadores").innerText = cliente.implantadores;
+                document.getElementById("infoProduto").innerText = cliente.produto;
+        
+                // Preenche as customizações do cliente
+                const listaCustomizacoes = cliente.customizacoes.map(customizacao => `<li class="list-group-item">${customizacao.evento}: ${customizacao.evento}: ${customizacao.descricao} (${customizacao.data})</li>`).join("");
+                document.getElementById("listaCustomizacoes").innerHTML = listaCustomizacoes;
+            }
+        
+            // Adiciona um evento de alteração ao menu suspenso para chamar a função preencherInformacoesCliente() sempre que o cliente for alterado
+            document.getElementById("clienteSelect").addEventListener("change", preencherInformacoesCliente);
+        
+            // Chama a função preencherInformacoesCliente() inicialmente para exibir os dados do cliente selecionado por padrão
+            preencherInformacoesCliente();
+        
+            // Função de logout
+            function logout() {
+                window.location.href = 'index.html';
+            }
+        
+            //Menu Toggle Script
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+        
+    </body>
+</html>
