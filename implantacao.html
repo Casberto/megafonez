@@ -33,7 +33,7 @@
                         <a class="nav-link" href="customizacoes.html"><strong>Customizações</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="implantacao.html"><strong>Implantação</strong></a>
+                        <a class="nav-link active" href="implantacao.html"><strong>Implantação</strong></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="suporte.html"><strong>Suporte</strong></a>
@@ -58,58 +58,81 @@
         </nav>
 
         <section class="dashboard">
-            <h4 class="titulo"><strong>Comercial</strong></h4>
+            <h4 class="titulo"><strong>Implantação</strong></h4>
             <div class="container mt-4">
                 <div class="row">
                     <!-- Total de Projetos -->
-                    <div class="col-md-4 mb-4 ">
-                        <div class="card bg-info text-white">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Total de Projetos</h5>
-                                <p class="card-text">Softaex: 2</p>
-                                <p class="card-text">Debx: 4</p>
-                                <p class="card-text">Mago4: 3</p>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#totaldeprojetos" aria-expanded="false" aria-controls="totaldeprojetos">
+                                Total de Projetos
+                            </button>
+                            <div id="totaldeprojetos" class="collapse show">
+                                <div class="card-body bg-info shadow">
+                                    <p class="card-text text-white">Softaex: 2</p>
+                                    <p class="card-text text-white">Debx: 4</p>
+                                    <p class="card-text text-white">Mago4: 3</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Total de Horas de Projeto -->
                     <div class="col-md-4 mb-4">
-                        <div class="card bg-success text-white">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Total de Horas</h5>
-                                <p class="card-text">Softaex: 150</p>
-                                <p class="card-text">Debx: 2500</p>
-                                <p class="card-text">Mago4: 450</p>
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#totaldehoras" aria-expanded="false" aria-controls="totaldehoras">
+                                Total de Horas
+                            </button>
+                            <div id="totaldehoras" class="collapse show">
+                                <div class="card-body bg-success shadow">
+                                    <p class="card-text text-white">Softaex: 150</p>
+                                    <p class="card-text text-white">Debx: 2500</p>
+                                    <p class="card-text text-white">Mago4: 450</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Projetos Novos -->
                     <div class="col-md-4 mb-4">
-                        <div class="card bg-primary text-white">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Projetos Novos</h5>
-                                <p class="card-text">Softaex: 1</p>
-                                <p class="card-text">Debx: 2</p>
-                                <p class="card-text">Mago4: 2</p>
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#projetosnovosContent" aria-expanded="false" aria-controls="projetosnovosContent">
+                                Projetos Novos
+                            </button>
+                            <div id="projetosnovosContent" class="collapse show">
+                                <div class="card-body bg-light shadow">
+                                    <p class="card-text text-dark">Softaex: 1</p>
+                                    <p class="card-text text-dark">Debx: 2</p>
+                                    <p class="card-text text-dark">Mago4: 2</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Projetos Pré-GoLive -->
                     <div class="col-md-6 mb-4">
-                        <div class="card bg-warning text-white">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Projetos Pré-GoLive</h5>
-                                <p class="card-text">Softaex: 1</p>
-                                <p class="card-text">Debx: 1</p>
-                                <p class="card-text">Mago4: 1</p>
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#preGoliveContent" aria-expanded="false" aria-controls="preGoliveContent">
+                                Projetos Pré-GoLive
+                            </button>
+                            <div id="preGoliveContent" class="collapse show">
+                                <div class="card-body bg-warning shadow">
+                                    <p class="card-text text-white">Softaex: 1</p>
+                                    <p class="card-text text-white">Debx: 1</p>
+                                    <p class="card-text text-white">Mago4: 1</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Projetos Atrasados -->
                     <div class="col-md-6 mb-4">
-                        <div class="card bg-danger text-white">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Projetos Atrasados</h5>
-                                <p class="card-text">Softaex: 0</p>
-                                <p class="card-text">Debx: 1</p>
-                                <p class="card-text">Mago4: 1</p>
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#atrasadosContent" aria-expanded="false" aria-controls="atrasadosContent">
+                                Projetos Atrasados
+                            </button>
+                            <div id="atrasadosContent" class="collapse show">
+                                <div class="card-body bg-danger shadow">
+                                    <p class="card-text text-white">Softaex: 0</p>
+                                    <p class="card-text text-white">Debx: 1</p>
+                                    <p class="card-text text-white">Mago4: 1</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -118,15 +141,15 @@
             
     
             <div class="container mt-4">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs bg-dark " id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="debxtab" data-toggle="tab" href="#debxtabContent" role="tab" aria-controls="debxtabContent" aria-selected="true">Debx</a>
+                        <a class="nav-link text-info active" id="debxtab" data-toggle="tab" href="#debxtabContent" role="tab" aria-controls="debxtabContent" aria-selected="true">Debx</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="softaextab" data-toggle="tab" href="#softaextabContent" role="tab" aria-controls="softaextabContent" aria-selected="false">Softaex</a>
+                        <a class="nav-link text-info" id="softaextab" data-toggle="tab" href="#softaextabContent" role="tab" aria-controls="softaextabContent" aria-selected="false">Softaex</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="magotab" data-toggle="tab" href="#magotabContent" role="tab" aria-controls="magotabContent" aria-selected="false">Mago4</a>
+                        <a class="nav-link text-info" id="magotab" data-toggle="tab" href="#magotabContent" role="tab" aria-controls="magotabContent" aria-selected="false">Mago4</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">

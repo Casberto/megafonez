@@ -38,7 +38,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="suporte.html"><strong>Suporte</strong></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="tarefas.html"><strong>Tarefas</strong></a>
                     </li>
                     <li class="nav-item">
@@ -56,6 +56,103 @@
                 </form>
             </div>
         </nav>
+
+        <section class="central">
+            <h4 class="titulo"><strong>Tarefas</strong></h4>
+            <div class="container mt-0 cards">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <label for="clienteSelect"><strong>Selecionar Cliente:</strong></label>
+                        <select class="form-control bg-dark text-light" id="clienteSelect">
+                            <option value="cliente1">Empresa A Ltda</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#infoClienteContent" aria-expanded="false" aria-controls="infoClienteContent">
+                                Informações do Cliente
+                            </button>
+                            <div id="infoClienteContent" class="collapse show">
+                                <div class="card-body shadow">
+                                    <p class="card-text"><strong>Vendedor:</strong> João Silva</p>
+                                    <p class="card-text"><strong>Responsável:</strong> Carlos Souza</span></p>
+                                    <p class="card-text"><strong>Telefone:</strong> (11) 9876-5432</p>
+                                    <p class="card-text"><strong>E-mail:</strong> carlos@exemplo.com</p>
+                                    <p class="card-text"><strong>Produto:</strong> Debx</p>
+                                    <p class="card-text"><strong>Status:</strong> <span class="badge badge-success rounded-pill">✓ Liberado para Suporte</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#chamadosContent" aria-expanded="false" aria-controls="chamadosContent">
+                                Tarefas
+                            </button>
+                            <div id="chamadosContent" class="collapse show">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Tarefa</th>
+                                                    <th scope="col">Sinopse</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Prioridade</th>
+                                                    <th scope="col">Criação</th>
+                                                    <th scope="col">Prazo</th>
+                                                    <th scope="col">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>59374</td>
+                                                    <td>Oracle Corrompido</td>
+                                                    <td>Defeito</td>
+                                                    <td><span class="badge badge-danger rounded-pill">Urgente</span></td>
+                                                    <td>24/06/2024</td>
+                                                    <td>26/06/2024</td>
+                                                    <td class="text-light bg-warning">A Fazer</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>58527</td>
+                                                    <td>Criação de Botão de Soma</td>
+                                                    <td>Necessidade</td>
+                                                    <td><span class="badge badge-warning rounded-pill">Médio</span></td>
+                                                    <td>24/06/2024</td>
+                                                    <td>30/06/2024</td>
+                                                    <td class="text-light bg-primary">Em Progresso</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>58520</td>
+                                                    <td>Duvida sobre botão</td>
+                                                    <td>Suporte</td>
+                                                    <td><span class="badge badge-info rounded-pill">Baixo</span></td>
+                                                    <td>24/06/2024</td>
+                                                    <td>10/07/2024</td>
+                                                    <td class="text-light bg-success">Concluída</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </section>
 
         <script>
         // Função de logout

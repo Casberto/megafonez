@@ -35,7 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="implantacao.html"><strong>Implantação</strong></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="suporte.html"><strong>Suporte</strong></a>
                     </li>
                     <li class="nav-item">
@@ -56,19 +56,101 @@
                 </form>
             </div>
         </nav>
-
-        <script>
-        // Função de logout
-        function logout() {
-            window.location.href = 'index.html';
-        }
+        <section class="central">
+            <h4 class="titulo"><strong>Suporte</strong></h4>
+            <div class="container mt-0 cards">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <label for="clienteSelect"><strong>Selecionar Cliente:</strong></label>
+                        <select class="form-control bg-dark text-light" id="clienteSelect">
+                            <option value="cliente1">Empresa A Ltda</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         
-        //Menu Toggle Script
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
+            <div class="container mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#infoClienteContent" aria-expanded="false" aria-controls="infoClienteContent">
+                                Informações do Cliente
+                            </button>
+                            <div id="infoClienteContent" class="collapse show">
+                                <div class="card-body shadow">
+                                    <p class="card-text"><strong>Vendedor:</strong> João Silva</p>
+                                    <p class="card-text"><strong>Responsável:</strong> Carlos Souza</span></p>
+                                    <p class="card-text"><strong>Telefone:</strong> (11) 9876-5432</p>
+                                    <p class="card-text"><strong>E-mail:</strong> carlos@exemplo.com</p>
+                                    <p class="card-text"><strong>Produto:</strong> Debx</p>
+                                    <p class="card-text"><strong>Status:</strong> <span class="badge badge-success rounded-pill">✓ Liberado para Suporte</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <button class="btn btn-dark dropdown-toggle w-100" type="button" data-toggle="collapse" data-target="#chamadosContent" aria-expanded="false" aria-controls="chamadosContent">
+                                Histórico de Chamados
+                            </button>
+                            <div id="chamadosContent" class="collapse show">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Chamado</th>
+                                                    <th scope="col">Assunto</th>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>69374</td>
+                                                    <td>Problema de conexão</td>
+                                                    <td>Suporte</td>
+                                                    <td>Pendente Cliente</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>68527</td>
+                                                    <td>Atualização de software</td>
+                                                    <td>Solicitar Atualização de Versão</td>
+                                                    <td>Aguardando Finalização</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>68520</td>
+                                                    <td>Erro ao salvar dados</td>
+                                                    <td>Defeito</td>
+                                                    <td>Pendente</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </section>
+        <script>
+            // Função de logout
+            function logout() {
+                window.location.href = 'index.html';
+            }
+            
+            //Menu Toggle Script
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
         </script>
     </body>
 </html>

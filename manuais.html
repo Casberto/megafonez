@@ -47,7 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="videos.html"><strong>Vídeos</strong></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="manuais.html"><strong>Manuais</strong></a>
                     </li>
                 </ul>
@@ -56,6 +56,149 @@
                 </form>
             </div>
         </nav>
+
+        <section class="central">
+            <h4 class="titulo"><strong>Manuais</strong></h4>
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#relatoriosContent" aria-expanded="true" aria-controls="relatoriosContent" style="cursor: pointer;">
+                                <h5 class="card-title d-inline">Manuais</h5>
+                            </div>
+                            <div id="relatoriosContent" class="collapse show">
+                                <div class="card-body shadow">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-group mb-0">
+                                            <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar manuais...">
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-success btn-sm mr-2" data-toggle="modal" data-target="#modalIncluir">Incluir Manual</button>
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalExcluir">Excluir Manual</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Manual</th>
+                                                    <th>Extensão</th>
+                                                    <th>Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="reportList">
+                                                <tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Módulo Financeiro</td>
+                                                    <td>PDF</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Módulo de Recursos Humanos</td>
+                                                    <td>PDF</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Módulo Fiscal</td>
+                                                    <td>PDF</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Inclusão de Série de Nota</td>
+                                                    <td>DOCX</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Módulo de Estoques</td>
+                                                    <td>PDF</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr><tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Módulo Contábil</td>
+                                                    <td>PDF</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr><tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Módulo Gerencial</td>
+                                                    <td>PDF</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr><tr>
+                                                    <td><input type="checkbox"></td>
+                                                    <td>Módulo de Gestão de Projetos</td>
+                                                    <td>PDF</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Modal de Inclusão -->
+                            <div class="modal fade" id="modalIncluir" tabindex="-1" role="dialog" aria-labelledby="modalIncluirLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalIncluirLabel">Incluir Novo Manual</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="formIncluirManual">
+                                                <div class="form-group">
+                                                    <label for="nomeManual">Nome do Manual</label>
+                                                    <input type="text" class="form-control" id="nomeManual" name="nomeManual" placeholder="Digite o nome do manual">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="extensaoManual">Extensão</label>
+                                                    <input type="text" class="form-control" id="extensaoManual" name="extensaoManual" placeholder="Digite a extensão (ex: PDF, DOCX)">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="arquivoManual">Arquivo do Manual</label>
+                                                    <input type="file" class="form-control-file" id="arquivoManual" name="arquivoManual">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" onclick="salvarManual()">Salvar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Modal de Exclusão -->
+                            <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="modalExcluirLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalExcluirLabel">Excluir Manual</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Tem certeza que deseja excluir o(s) arquivo(s) selecionado(s)?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-danger">Excluir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <script>
         // Função de logout

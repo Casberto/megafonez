@@ -30,7 +30,7 @@
                         <a class="nav-link" href="comercial.html"><strong>Comercial</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="customizacoes.html"><strong>Customizações</strong></a>
+                        <a class="nav-link active" href="customizacoes.html"><strong>Customizações</strong></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="implantacao.html"><strong>Implantação</strong></a>
@@ -64,7 +64,7 @@
                     <!-- Seleção de Cliente -->
                     <div class="col-md-12 mb-4">
                         <label for="clienteSelect">Selecionar Cliente:</label>
-                        <select class="form-control" id="clienteSelect">
+                        <select class="form-control bg-dark text-light" id="clienteSelect">
                             <option value="cliente1">Empresa A Ltda</option>
                             <option value="cliente2">Empresa B SA</option>
                             <option value="cliente3">Empresa C Eireli</option>
@@ -73,36 +73,45 @@
                 </div>
             </div>
             
-            <div class="container mt-4">
+            <div class="container mt-0">
                 <div class="row justify-content-center">
                     <div class="col-md-12 mb-4">
                         <div class="card">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Informações do Cliente</h5>
-                                <p class="card-text"><strong>Status:</strong> <span id="infoStatus"></span></p>
-                                <p class="card-text"><strong>Implantadores:</strong> <span id="infoImplantadores"></span></p>
-                                <p class="card-text"><strong>Produto:</strong> <span id="infoProduto"></span></p>
+                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#infoClienteContent" aria-expanded="false" aria-controls="infoClienteContent" style="cursor: pointer;">
+                                <h5 class="card-title d-inline">Informações do Cliente</h5>
+                            </div>
+                            <div id="infoClienteContent" class="collapse show">
+                                <div class="card-body shadow">
+                                    <p class="card-text"><strong>Status:</strong> <span id="infoStatus"></span></p>
+                                    <p class="card-text"><strong>Implantadores:</strong> <span id="infoImplantadores"></span></p>
+                                    <p class="card-text"><strong>Produto:</strong> <span id="infoProduto"></span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="container mt-4">
+            <div class="container mt-0">
                 <div class="row justify-content-center">
                     <div class="col-md-12 mb-4">
                         <div class="card">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Customizações</h5>
-                                <ul class="list-group" id="listaCustomizacoes">
-                                    
-                                </ul>
+                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#customizacoesContent" aria-expanded="false" aria-controls="customizacoesContent" style="cursor: pointer;">
+                                <h5 class="card-title d-inline">Customizações</h5>
+                            </div>
+                            <div id="customizacoesContent" class="collapse show">
+                                <div class="card-body shadow">
+                                    <ul class="list-group" id="listaCustomizacoes">
+                                        <!-- Itens da lista serão adicionados dinamicamente -->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
         
 
         <script>
@@ -112,7 +121,7 @@
                     implantadores: "João Silva, Carlos Oliveira, Julia Nascimento",
                     produto: "Debx",
                     customizacoes: [
-                        { evento: "Integração de cadastro de cliente", data: "01/01/2024", descricao: "Personalização específica para integração de cadastro de cliente. Disponibilizado ao cliente na versão 24.1.0.0" },
+                        { evento: "Integração de cadastro de cliente", data: "01/01/2024", descricao: "Personalização específica para integração de cadastro de cliente. Disponibilizado ao cliente na versão 24.1.0.0. RQ0011 Tarefa 00101" },
                         { evento: "Envio automático de novo cadastro", data: "15/01/2024", descricao: "Personalização para envio automático de e-mail de boas-vindas para novos clientes. Disponibilizado ao cliente na versão 24.1.2.0" }
                     ]
                 },
