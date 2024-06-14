@@ -58,22 +58,8 @@
         </nav>
         
         <section class="central">
-            <h4 class="titulo"><strong>Customizações</strong></h4>
-            <div class="container mt-4">
-                <div class="row justify-content-center">
-                    <!-- Seleção de Cliente -->
-                    <div class="col-md-12 mb-4">
-                        <label for="clienteSelect">Selecionar Cliente:</label>
-                        <select class="form-control bg-dark text-light" id="clienteSelect">
-                            <option value="cliente1">Empresa A Ltda</option>
-                            <option value="cliente2">Empresa B SA</option>
-                            <option value="cliente3">Empresa C Eireli</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="container mt-0">
+            <h4 class="titulo"><strong>Customizações</strong></h4>            
+            <div class="container mt-2">
                 <div class="row justify-content-center">
                     <div class="col-md-12 mb-4">
                         <div class="card">
@@ -81,10 +67,15 @@
                                 <h5 class="card-title d-inline">Informações do Cliente</h5>
                             </div>
                             <div id="infoClienteContent" class="collapse show">
-                                <div class="card-body shadow">
-                                    <p class="card-text"><strong>Status:</strong> <span id="infoStatus"></span></p>
-                                    <p class="card-text"><strong>Implantadores:</strong> <span id="infoImplantadores"></span></p>
-                                    <p class="card-text"><strong>Produto:</strong> <span id="infoProduto"></span></p>
+                                <div id="infoClienteContent" class="collapse show">
+                                    <div class="card-body shadow">
+                                        <p class="card-text"><strong>Vendedor:</strong> João Silva</p>
+                                        <p class="card-text"><strong>Responsável:</strong> Carlos Souza</p>
+                                        <p class="card-text"><strong>Telefone:</strong> (11) 99876-5432</p>
+                                        <p class="card-text"><strong>E-mail:</strong> carlos@exemplo.com</p>
+                                        <p class="card-text"><strong>Produto:</strong> Debx</p>
+                                        <p class="card-text"><strong>Status: </strong><span class="badge badge-success rounded-pill">✓ Liberado para Suporte</span></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +93,9 @@
                             <div id="customizacoesContent" class="collapse show">
                                 <div class="card-body shadow">
                                     <ul class="list-group" id="listaCustomizacoes">
-                                        <!-- Itens da lista serão adicionados dinamicamente -->
+                                        <li class="list-group-item">Integração de cadastro de cliente: Integração de cadastro de cliente: Personalização específica para integração de cadastro de cliente. Disponibilizado ao cliente na versão 24.1.0.0. RQ0011 Tarefa 00101 (01/01/2024)</li>
+                                        <li class="list-group-item">Envio automático de novo cadastro: Envio automático de novo cadastro: Personalização para envio automático de e-mail de boas-vindas para novos clientes. Disponibilizado ao cliente na versão 24.1.2.0 (15/01/2024)</li>
+                                   
                                     </ul>
                                 </div>
                             </div>

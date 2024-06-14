@@ -59,34 +59,21 @@
 
         <section class="central">
             <h4 class="titulo"><strong>Comercial</strong></h4>
-            <div class="container mt-0 cards">
-                <div class="row justify-content-center">
-                    <div class="col-md-12 mb-4">
-                        <label for="clienteSelect"><strong>Selecionar Cliente:</strong></label>
-                        <select class="form-control bg-dark text-light" id="clienteSelect">
-                            <option value="cliente1">Empresa A Ltda</option>
-                            <option value="cliente2">Empresa B SA</option>
-                            <option value="cliente3">Empresa C Eireli</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="container mt-0">
+            <div class="container mt-2">
                 <div class="row justify-content-center">
                     <div class="col-md-12 mb-4">
                         <div class="card">
                             <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#infoClienteContent" aria-expanded="true" aria-controls="infoClienteContent" style="cursor: pointer;">
-                                <h5 class="card-title d-inline">Informações do Cliente</h5>
+                                <h5 class="card-title d-inline">Informações da Empresa</h5>
                             </div>
                             <div id="infoClienteContent" class="collapse show">
                                 <div class="card-body shadow">
-                                    <p class="card-text"><strong>Vendedor:</strong> <span id="infoVendedor"></span></p>
-                                    <p class="card-text"><strong>Responsável:</strong> <span id="infoResponsavel"></span></p>
-                                    <p class="card-text"><strong>Telefone:</strong> <span id="infoTelefone"></span></p>
-                                    <p class="card-text"><strong>E-mail:</strong> <span id="infoEmail"></span></p>
-                                    <p class="card-text"><strong>Produto:</strong> <span id="infoProduto"></span></p>
+                                    <p class="card-text"><strong>Vendedor:</strong> João Silva</p>
+                                    <p class="card-text"><strong>Responsável:</strong> Carlos Souza</p>
+                                    <p class="card-text"><strong>Telefone:</strong> (11) 99876-5432</p>
+                                    <p class="card-text"><strong>E-mail:</strong> carlos@exemplo.com</p>
+                                    <p class="card-text"><strong>Produto:</strong> Debx</p>
+                                    <p class="card-text"><strong>Status: </strong><span class="badge badge-success rounded-pill">✓ Liberado para Suporte</span></p>
                                 </div>
                             </div>
                         </div>
@@ -98,12 +85,17 @@
                     <div class="col-md-8 mb-4">
                         <div class="card">
                             <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#linhaTempoContent" aria-expanded="true" aria-controls="linhaTempoContent" style="cursor: pointer;">
-                                <h5 class="card-title d-inline">Linha do Tempo do Cliente</h5>
+                                <h5 class="card-title d-inline">Linha do Tempo na Zucchetti</h5>
                             </div>
                             <div id="linhaTempoContent" class="collapse show">
                                 <div class="card-body shadow">
                                     <ul class="list-group" id="linhaTempoCliente">
-                                        <!-- Os itens da linha do tempo serão adicionados dinamicamente aqui -->
+                                        <li class="list-group-item">Início das Negociações: 01/01/2024</li>
+                                        <li class="list-group-item">Fechamento de Contrato: 15/01/2024</li>
+                                        <li class="list-group-item">Assinatura de Documentos Iniciais: 20/01/2024</li>
+                                        <li class="list-group-item">Início da Implantação: 01/02/2024</li>
+                                        <li class="list-group-item">Go-Live: 15/03/2024</li>
+                                        <li class="list-group-item">Passagem para o Suporte: 30/03/2024</li>
                                     </ul>
                                 </div>
                             </div>
@@ -112,14 +104,56 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#rqsPendentesContent" aria-expanded="true" aria-controls="rqsPendentesContent" style="cursor: pointer;">
-                                <h5 class="card-title d-inline">RQs Pendentes de Orçamento</h5>
+                                <h5 class="card-title d-inline">RQ's Pendentes</h5>
                             </div>
                             <div id="rqsPendentesContent" class="collapse show">
                                 <div class="card-body shadow">
                                     <p class="card-text">Total: <span id="totalRQsPendentes"></span></p>
                                     <ul class="list-group" id="listaRQsPendentes">
-                                        <!-- Os itens da lista de RQs pendentes serão adicionados dinamicamente aqui -->
+                                        <li class="list-group-item">RQ0011 - Responsável: João</li>
+                                        <li class="list-group-item">RQ0122 - Responsável: Carlos</li>
+                                        <li class="list-group-item">RQ0013 - Responsável: Pedro</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                       <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#relatoriosContent" aria-expanded="true" aria-controls="relatoriosContent" style="cursor: pointer;">
+                                <h5 class="card-title d-inline">Reimpressão de Boletos e Documentos</h5>
+                            </div>
+                            <div id="relatoriosContent" class="collapse show">
+                                <div class="card-body shadow">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar relatórios...">
+                                    </div>
+                                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                        <table class="table table-hover">
+                                            <tbody id="reportList">
+                                                <tr>
+                                                    <td>Contrato Vigente</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Última Fatura</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Resumo de Faturas</td>
+                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pagamentos pendentes <i class="bi bi-lock"></i></td>
+                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -66,41 +66,34 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12 mb-1">
                         <div class="card">
-                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#chamadosContent" aria-expanded="true" aria-controls="chamadosContent" style="cursor: pointer;">
-                                <h5 class="card-title d-inline">Chamados</h5>
-                            </div>
-                            <div id="chamadosContent" class="collapse show">
-                                <div class="card-body shadow">
-                                    <canvas id="chamadosChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-12 mb-1">
-                        <div class="card">
                             <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#avisosContent" aria-expanded="false" aria-controls="avisosContent" style="cursor: pointer;">
-                                <h5 class="card-title d-inline">Avisos <span class="badge badge-danger rounded-pill">03</span></h5>
+                                <h5 class="card-title d-inline">Avisos <span class="badge badge-danger rounded-pill">04</span></h5>
                             </div>
                             <div id="avisosContent" class="collapse">
                                 <div class="card-body shadow">
                                     <ol class="list-group list-group-numbered">
                                         <li class="list-group-item d-flex justify-content-between align-items-start">
                                             <div class="ms-2 me-auto">
-                                                <div class="fw-bold">Debx:</div>
-                                                Versão com correção da norma fiscal 13421/2024 liberada na versão 24.6.2.0 em 13/06/24
+                                                <div class="fw-bold"><strong>Entrega de Tarefa</strong></div>
+                                                A correção da tarefa 10214 foi liberada na versão 24.6.2.1, abra um chamado de atualização por gentileza.
                                             </div>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-start">
                                             <div class="ms-2 me-auto">
-                                                <div class="fw-bold">SoftaEx:</div>
-                                                Versão com correção da norma fiscal 13421/2024 liberada na versão 4.2.0.1 em 13/06/24
+                                                <div class="fw-bold"><strong>Retorno de Chamado</strong></div>
+                                                A solicitação da RQ023 foi finalizada e aplicada na base de produção.
                                             </div>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-start">
                                             <div class="ms-2 me-auto">
-                                                <div class="fw-bold">Mago4:</div>
-                                                Versão com correção da norma fiscal 13421/2024 liberada na versão 1.4.1.0 em 13/06/24
+                                                <div class="fw-bold"><strong>Atualização Recomendada</strong></div>
+                                                A sua última atualização ocorreu há 6 meses. Recomendamos que seja aberto um chamado de atualização para correções importantes estejam disponíveis.
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold"><strong>Atualização Recomendada</strong></div>
+                                                A SEFAZ adicionou modificações na estrutura de notas fiscais que podem impactar em seu processo. Verifique por gentileza, e caso necessário, basta abrir um chamado para atualização.
                                             </div>
                                         </li>
                                     </ol>
@@ -108,68 +101,85 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div>
-            </div>
-            <div class="container mt-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 mb-4">
-                        <div class="card">
-                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#implantacaoContent" aria-expanded="true" aria-controls="implantacaoContent" style="cursor: pointer;">
-                                <h5 class="card-title d-inline">Clientes em Implantação</h5>
-                            </div>
-                            <div id="implantacaoContent" class="collapse show">
-                                <div class="card-body shadow">
-                                    <canvas id="implantacaoChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="card">
-                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#suporteContent" aria-expanded="true" aria-controls="suporteContent" style="cursor: pointer;">
-                                <h5 class="card-title d-inline">Clientes Bloqueados</h5>
-                            </div>
-                            <div id="suporteContent" class="collapse show">
-                                <div class="card-body shadow">
-                                    <canvas id="suporteChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
 
+                    <div class="col-md-12 mb-1">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#avisosContent" aria-expanded="false" aria-controls="avisosContent" style="cursor: pointer;">
+                                <h5 class="card-title d-inline">Gerenciamento de Licença</h5>
+                            </div>
+                            <div id="avisosContent" class="collapse show">
+                                <div class="card-body shadow">
+                                    <ol class="list-group list-group-numbered">
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold"><strong>Vencimento de Fatura</strong></div>
+                                                Faltam 12 dias para o vencimento da fatura desse mês.
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold"><strong>Licenças</strong></div>
+                                                Você possuí 13 licenças para acesso simultâneo.
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-1">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#satisf" aria-expanded="false" aria-controls="satisf" style="cursor: pointer;">
+                                <h5 class="card-title d-inline">Pesquisa de Satisfação</h5>
+                            </div>
+                            <div id="satisf" class="collapse show">
+                                <div class="card-body shadow">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="satisfactionRange">Qual a sua satisfação conosco hoje?</label>
+                                            <input type="range" class="form-control-range" id="satisfactionRange" min="0" max="10">
+                                            <div class="d-flex justify-content-between">
+                                                <span>0 (Insatisfeito)</span>
+                                                <span>(Muito Satisfeito) 10</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="comments">Gostaria de nos contar o motivo?</label>
+                                            <textarea class="form-control" id="comments" rows="4" placeholder="Digite aqui seus comentários..."></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 mb-1">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white dropdown-toggle w-100" data-toggle="collapse" data-target="#chamadosContent" aria-expanded="true" aria-controls="chamadosContent" style="cursor: pointer;">
+                                <h5 class="card-title d-inline">Relação de Chamados</h5>
+                            </div>
+                            <div id="chamadosContent" class="collapse">
+                                <div class="card-body shadow">
+                                    <canvas id="chamadosChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
             <!-- Cards -->
             <div class="container mt-4">
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <div class="card-body shadow">
-                                <h5 class="card-title">Clientes em Implantação</h5>
-                                <p class="card-text">10 clientes em processo de implantação.</p>
-                                <a href="implantacao.html" class="btn btn-dark">Ver detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">Clientes Bloqueados no Suporte</h5>
-                                <p class="card-text">3 clientes bloqueados no suporte.</p>
-                                <a href="suporte.html" class="btn btn-dark">Ver detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <div class="card-body shadow">
-                                <h5 class="card-title">RQ's Pendente Orçamento</h5>
+                                <h5 class="card-title">RQ's em Andamento</h5>
                                 <p class="card-text">5 requisições pendentes de orçamento.</p>
-                                <a href="rq.html" class="btn btn-dark">Ver detalhes</a>
+                                <a href="rq_cli.html" class="btn btn-dark">Ver detalhes</a>
                             </div>
                         </div>
                     </div>
@@ -177,9 +187,9 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <div class="card-body shadow">
-                                <h5 class="card-title">RQ's Pendente Desenvolvimento</h5>
-                                <p class="card-text">5 requisições em desenvolvimento.</p>
-                                <a href="rq.html" class="btn btn-dark">Ver detalhes</a>
+                                <h5 class="card-title">Tarefas em Andamento</h5>
+                                <p class="card-text">5 tarefas em andamento.</p>
+                                <a href="tarefas_cli.html" class="btn btn-dark">Ver detalhes</a>
                             </div>
                         </div>
                     </div>
@@ -187,19 +197,9 @@
                     <div class="col-md-4 mb-4">
                             <div class="card">
                                 <div class="card-body shadow">
-                                    <h5 class="card-title">Tarefas em Progresso</h5>
-                                    <p class="card-text">5 tarefas em desenvolvimento.</p>
-                                    <a href="rq.html" class="btn btn-dark">Ver detalhes</a>
-                                </div>
-                            </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <div class="card-body shadow">
-                                    <h5 class="card-title">Tarefas a fazer</h5>
-                                    <p class="card-text">5 tarefas pendentes de desenvolvimento.</p>
-                                    <a href="rq.html" class="btn btn-dark">Ver detalhes</a>
+                                    <h5 class="card-title">SAC's em Andamento</h5>
+                                    <p class="card-text">5 chamados em andamento.</p>
+                                    <a href="suporte_cli.html" class="btn btn-dark">Ver detalhes</a>
                                 </div>
                             </div>
                     </div>
@@ -222,35 +222,19 @@
                                         <table class="table table-hover">
                                             <tbody id="reportList">
                                                 <tr>
-                                                    <td>Resumo de Vendas <i class="bi bi-lock"></i></td>
-                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Total de vendas por período <i class="bi bi-lock"></i></td>
-                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Comparação com metas de vendas <i class="bi bi-lock"></i></td>
-                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Top produtos/serviços vendidos <i class="bi bi-lock"></i></td>
-                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
-                                                </tr>
-                                                <tr>
                                                     <td>Status de Implantação</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Projetos em andamento</td>
+                                                    <td>RQs em andamento</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Fases de implantação concluídas</td>
+                                                    <td>RQs Concluídas</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Prazos e marcos importantes</td>
+                                                    <td>Tarefas</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
@@ -266,92 +250,23 @@
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Categorias mais comuns de chamados</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
                                                     <td>Solicitações de Customizações</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Número de customizações solicitadas</td>
+                                                    <td>Faturas emitidas e recebidas</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Status das customizações (pendente, em andamento, concluído)</td>
+                                                    <td>Pagamentos pendentes</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Tempo médio para implantação</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Requisições de Qualidade (RQ's)</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Total de RQ's submetidas</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Status das RQ's (aberta, em análise, resolvida)</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Feedback de clientes sobre RQ's</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                <tr>
-                                                    <td>Faturas emitidas e recebidas <i class="bi bi-lock"></i></td>
-                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Pagamentos pendentes <i class="bi bi-lock"></i></td>
-                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Receita por cliente <i class="bi bi-lock"></i></td>
-                                                    <td><button class="btn btn-primary btn-sm disabled">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Número de clientes ativos</td>
+                                                    <td>Número de licenças ativas</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Funcionalidades mais solicitadas em chamados</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Feedback e Satisfação do Cliente com Suporte</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Feedback e Satisfação do Cliente com RQs</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Comentários e feedbacks recentes</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Pontuação média de avaliações</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Eficiência Interna</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tarefas concluídas por produto</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tempo médio de resposta interna</td>
-                                                    <td><button class="btn btn-primary btn-sm">Download</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Projetos concluídos no prazo</td>
                                                     <td><button class="btn btn-primary btn-sm">Download</button></td>
                                                 </tr>
                                             </tbody>
