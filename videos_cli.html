@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./CSS/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="IMG/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <strong>Megafone</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard_cliente.html"><strong>Dashboard</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comercial_cli.html"><strong>Comercial</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customizacoes_cli.html"><strong>Customizações</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="implantacao_cli.html"><strong>Implantação</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suporte_cli.html"><strong>Suporte</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tarefas_cli.html"><strong>Tarefas</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rq_cli.html"><strong>RQ's</strong></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="videos_cli.html"><strong>Vídeos</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manuais_cli.html"><strong>Manuais</strong></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button" onclick="logout()">Logout</button>
+                </form>
+            </div>
+        </nav>
+
+        <section class="central">
+            <h4 class="titulo"><strong>Videos</strong></h4>
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white">
+                                1.1 Cadastro de Empresas
+                            </div>
+                            <div class="card-body">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video class="embed-responsive-item" controls>
+                                        <source src="./VIDEOS/videoteste.mp4" type="video/mp4">
+                                        Seu navegador não suporta o elemento <code>video</code>.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <!-- Campo de Busca de Vídeos -->
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Buscar Palavras Chave..." aria-label="Buscar Palavras Chave..." aria-describedby="button-addon2" id="searchInput">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary bg-dark text-light" type="button" id="button-addon2">Buscar</button>
+                            </div>
+                        </div>
+        
+                        <!-- Card com barra de rolagem -->
+                        <div class="card fixed-table-header" style="max-height: 400px; overflow-y: auto;">
+                            <table class="table table-striped mb-0">
+                                <thead class="bg-dark text-white">
+                                    <tr>
+                                        <th scope="col">Nome do Arquivo</th>
+                                        <th scope="col">Duração</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="videoList">
+                                    <!-- Os arquivos de vídeo serão listados dinamicamente aqui -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </section>
+        
+        
+
+        <script>
+        // Simulação de vídeos (substitua pela lógica real de busca)
+        const videos = [
+            { nome: "1.1 Cadastro de Empresas", duracao: "5:30" },
+            { nome: "1.2 Cadastro de Endereços", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste2.mp4", duracao: "3:45" },
+            { nome: "videoteste3.mp4", duracao: "7:15" }
+            // Adicione mais vídeos conforme necessário
+        ];
+
+        // Função para listar os vídeos na tabela
+        function listarVideos() {
+            const videoList = document.getElementById("videoList");
+
+            // Limpa a lista atual de vídeos
+            videoList.innerHTML = "";
+
+            // Itera sobre a lista de vídeos e cria as linhas da tabela dinamicamente
+            videos.forEach(video => {
+                const row = document.createElement("tr");
+
+                // Cria as células para Nome do Arquivo e Duração
+                const nomeCell = document.createElement("td");
+                nomeCell.textContent = video.nome;
+
+                const duracaoCell = document.createElement("td");
+                duracaoCell.textContent = video.duracao;
+
+                // Cria a célula para "Reproduzir/Reproduzindo" com um botão
+                const reproduzirCell = document.createElement("td");
+                const button = document.createElement("button");
+                button.textContent = "Reproduzir";
+                button.classList.add("btn", "btn-sm", "btn-outline-dark");
+                button.addEventListener("click", () => {
+                    // Simula a mudança dinâmica entre "Reproduzir" e "Reproduzindo"
+                    button.textContent = button.textContent === "Reproduzir" ? "Reproduzindo" : "Reproduzir";
+                });
+                reproduzirCell.appendChild(button);
+
+                // Adiciona as células à linha e a linha à tabela
+                row.appendChild(nomeCell);
+                row.appendChild(duracaoCell);
+                row.appendChild(reproduzirCell);
+                videoList.appendChild(row);
+            });
+        }
+
+        // Adiciona um evento de clique ao botão de busca
+        document.getElementById("button-addon2").addEventListener("click", listarVideos);
+
+        // Chama listarVideos() inicialmente para preencher a tabela com os vídeos disponíveis
+        listarVideos();
+
+        // Função de logout
+        function logout() {
+            window.location.href = 'index.html';
+        }
+        
+        //Menu Toggle Script
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        </script>
+    </body>
+</html>
