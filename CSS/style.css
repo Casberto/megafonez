@@ -4,11 +4,8 @@ body{
 
 .central {
     background-color: white;
-    width: 65%;
     border-radius: 1%;
     padding-top: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 0 auto; /* Centraliza horizontalmente */
     display: flex;
     flex-direction: column;
@@ -18,13 +15,28 @@ body{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo para desktop */
+@media (min-width: 768px) {
+    .central {
+        width: 65%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Estilo para mobile */
+@media (max-width: 767px) {
+    .central {
+        width: 95%;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+}
+
 .dashboard {
     background-color: white;
-    width: 70%;
     border-radius: 1%;
     padding-top: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 0 auto; /* Centraliza horizontalmente */
     display: flex;
     flex-direction: column;
@@ -33,6 +45,25 @@ body{
     margin-bottom: 1rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo para desktop */
+@media (min-width: 768px) {
+    .dashboard {
+        width: 60%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Estilo para mobile */
+@media (max-width: 767px) {
+    .dashboard {
+        width: 95%;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+}
+
 
 .cards{
     margin: 0%;
